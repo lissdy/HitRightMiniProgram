@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="title">🎾 拍准</view>
+
+  <button type="primary" bindtap="recordVideo">
+    开始拍准
+  </button>
+
+  <video
+    wx:if="{{videoUrl}}"
+    src="{{videoUrl}}"
+    controls
+    class="video"
+  ></video>
+
+  <button
+    wx:if="{{videoUrl && !loading}}"
+    bindtap="uploadVideo"
+  >
+    上传分析
+  </button>
+
+  <view wx:if="{{loading}}" class="loading">
+    AI 分析中...
+  </view>
+
+  <view wx:if="{{result}}" class="result">
+    <view>评分：{{result.score}}</view>
+    <view>建议：{{result.tips}}</view>
+  </view>
+</view>
