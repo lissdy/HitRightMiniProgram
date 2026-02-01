@@ -1,5 +1,5 @@
 <view class="container">
-  <view class="title">🎾 拍准</view>
+  <view class="title">HitRight</view>
 
   <button type="primary" bindtap="recordVideo">
     开始拍准
@@ -24,7 +24,13 @@
   </view>
 
   <view wx:if="{{result}}" class="result">
-    <view>评分：{{result.score}}</view>
-    <view>建议：{{result.tips}}</view>
+    <video
+      src="{{result.VideoUrl}}"
+      controls
+      autoplay
+      style="width: 100%;"
+    />
+
+    <view>建议：{{result.analysis.basic_quality}}</view>
   </view>
 </view>
