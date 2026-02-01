@@ -25,7 +25,7 @@ Page({
     this.setData({ loading: true })
 
     wx.uploadFile({
-      url: 'http://127.0.0.1:8000/analyze', // 本地后端
+      url: 'http://127.0.0.1:8000/analyze/serve', // 本地后端
       filePath: this.data.videoUrl,
       name: 'file',
       success: (res) => {
