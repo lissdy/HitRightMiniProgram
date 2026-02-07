@@ -8,7 +8,7 @@ Page({
   // 拍视频
   recordVideo() {
     wx.chooseVideo({
-      sourceType: ['camera'],
+      sourceType: ['camera', 'album'],
       maxDuration: 20,
       camera: 'back',
       success: (res) => {
@@ -25,7 +25,7 @@ Page({
     this.setData({ loading: true })
 
     wx.uploadFile({
-      url: 'http://127.0.0.1:8000/analyze/serve', // 本地后端
+      url: 'https://hitright.azurewebsites.net/analyze/serve',
       filePath: this.data.videoUrl,
       name: 'file',
       success: (res) => {

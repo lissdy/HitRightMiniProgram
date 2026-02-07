@@ -25,7 +25,7 @@
 
   <view wx:if="{{result}}" class="result">
     <video
-      src="{{result.videoUrl}}"
+      src="https://hitright.azurewebsites.net/{{result.videoUrl}}"
       controls
       autoplay
       style="width: 100%;"
